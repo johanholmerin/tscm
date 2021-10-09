@@ -1,0 +1,14 @@
+{
+  "testEnvironment": "node",
+  "testPathIgnorePatterns": [
+    "__tests__/fixtures",
+    "__tests__/utils",
+    "__tests__/setup.js"
+  ],
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "__tests__/fixtures"
+  ],
+  "setupFilesAfterEnv": ["<rootDir>/__tests__/setup.js"],
+  "collectCoverage": true
+}

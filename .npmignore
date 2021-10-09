@@ -1,0 +1,10 @@
+node_modules
+build
+*.log*
+.vim
+coverage
+__tests__
+demo
+.github
+.*
+jest.config.json

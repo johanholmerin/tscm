@@ -1,0 +1,6 @@
+{
+  "tsserver.ignoreLocalTsserver": true,
+  "tsserver.tsdk": "./typescript/lib",
+  "tsserver.debugPort": 9229,
+  "tsserver.log": "verbose"
+}

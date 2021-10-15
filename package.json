@@ -1,6 +1,6 @@
 {
   "name": "tscm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript Compiler Macros",
   "author": "Johan Holmerin <johan@holmer.in>",
   "license": "MIT",

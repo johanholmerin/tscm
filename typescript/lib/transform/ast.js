@@ -44,6 +44,7 @@ function transformAst(ast, fileName, text) {
         nodePath.node.end,
         newCodeString
       ]);
+      nodePath.replaceWith(newNode);
     } else if (nodePath.isImportSpecifier()) {
       const list = nodePath.parentPath.get('specifiers');
       const index = list.indexOf(nodePath);
@@ -63,6 +64,7 @@ function transformAst(ast, fileName, text) {
         // Replacing with same length makes error messages better
         ''.padStart(nodePath.node.end - nodePath.node.start)
       ]);
+      nodePath.remove();
     }
   }
 

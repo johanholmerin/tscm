@@ -34,7 +34,15 @@ function normalizeProgramOptions(
 }
 
 function sortReplacements(replacements) {
-  return Array.from(replacements).sort(([a], [b]) => a - b);
+  return Array.from(replacements)
+    .sort(([a], [b]) => a - b)
+    .filter((replacement) => {
+      // Removes nested positions
+      const wrapping = replacements.find(
+        ([start, end]) => replacement[0] > start && replacement[1] < end
+      );
+      return !wrapping;
+    });
 }
 
 module.exports = {

@@ -10,6 +10,12 @@ const MAPPING = [
   [0, 47, '                                               ']
 ];
 
+const NESTED_MAPPING = [
+  [82, 97, '"string value: val"'],
+  [64, 101, '[{\n  prop: "string value: val"\n}]'],
+  [0, 41, '                                         ']
+];
+
 describe('translatePosForward', () => {
   it('returns input on no mappings', () => {
     expect(translatePosForward([], 10)).toEqual(10);
@@ -34,6 +40,10 @@ describe('translatePosForward', () => {
   it('returns -1 in replacement', () => {
     expect(translatePosForward(MAPPING, 102)).toEqual(-1);
   });
+
+  it('supports nested macros', () => {
+    expect(translatePosForward(NESTED_MAPPING, 118)).toEqual(114);
+  });
 });
 
 describe('translatePosBackward', () => {
@@ -57,7 +67,7 @@ describe('translatePosBackward', () => {
     expect(translatePosBackward(MAPPING, 178)).toEqual(193);
   });
 
-  it('returns -1 in replacement', () => {
-    expect(translatePosForward(MAPPING, 102)).toEqual(-1);
+  it('supports nested macros', () => {
+    expect(translatePosBackward(NESTED_MAPPING, 114)).toEqual(118);
   });
 });

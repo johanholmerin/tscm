@@ -36,7 +36,7 @@ const val = macro!!('literal', identifier);
 
 #### Macro definition
 
-Macros are normal functions that get the CallExpression Node as parameter and return a new Node. They can be local files or npm packages. For more information see the [Writing plugins](docs/Writing-macros.md) guide.
+Macros are normal functions that get the CallExpression Node as parameter and return a new Node. They can be local files or npm packages. For more information see the [Writing macros](docs/Writing-macros.md) guide.
 
 ```javascript
 const t = require('@babel/types');

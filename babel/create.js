@@ -19,7 +19,15 @@ function createVisitor({ onReplace, onError, fileName, compiler }) {
 
         const macroName = nodePath.get('callee.expression.expression').node
           .name;
-        const binding = nodePath.getStatementParent().scope.bindings[macroName];
+        let scope = nodePath.scope;
+        let binding;
+        while (scope) {
+          if (macroName in scope.bindings) {
+            binding = scope.bindings[macroName];
+            break;
+          }
+          scope = scope.parent;
+        }
         if (!binding) return;
         const impDec = binding.path.parentPath;
 

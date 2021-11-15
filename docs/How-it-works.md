@@ -22,10 +22,7 @@ The files all export a single namespace, `ts`, which contains the methods that n
 
 _Only for `tsserver`_
 
-A Language Server Plugin is added that translates source code positions.
-
-- different positions in TS AST from source code
-- LSP that translates positions before sending to tsserver and translates result
+A Language Server Plugin is added that translates source code positions to the position in the generated code, and the reverse for the response.
 
 #### `host.getSourceFile`
 

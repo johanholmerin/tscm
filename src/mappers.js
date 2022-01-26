@@ -57,7 +57,7 @@ function DefinitionInfoAndBoundSpan(map, result) {
 function Classifications(map, result) {
   return {
     ...result,
-    spans: result.spans((span) => translatePosBackward(map, span))
+    spans: result.spans.map((span) => translatePosBackward(map, span))
   };
 }
 

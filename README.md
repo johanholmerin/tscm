@@ -1,3 +1,9 @@
+# Deprecated
+
+Since TypeScript 5 this project is no longer supported
+
+---
+
 # tscm
 
 Function-like macros for TypeScript, inspired by Rust
